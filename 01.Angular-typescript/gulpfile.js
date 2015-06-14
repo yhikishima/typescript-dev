@@ -42,23 +42,6 @@ gulp.task('tsify', function(){
     .pipe(gulp.dest('dist/js'))
 });
 
-
-// browserify task
-// gulp.task('browserify', function(){
-//   return browserify({
-//       entries: 'src/js/main.js',
-//       debug: true
-//     })
-//     .bundle()
-//     .pipe(source('bundle.js'))
-//     .pipe(buffer())
-//     .pipe(sourcemaps.init({loadMaps: true}))
-//     .pipe(sourcemaps.write('./'))
-//     .pipe(gulp.dest(
-//       'dist/js/'
-//     ));
-// });
-
 // watch task
 gulp.task('watch', function () {
   watch('src/ts/**/*.ts', function () {
