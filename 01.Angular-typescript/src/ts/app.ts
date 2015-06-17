@@ -1,3 +1,5 @@
+/// <reference path="../../typings/tsd.d.ts" />
+
 import Greeter = require('./app2');
 
 var greeter = new Greeter('World');
@@ -10,12 +12,17 @@ class TodoItem {
   done: boolean;
 }
 
-interface TodoScope extends ng.IScope {
-  todos: Array<TodoItem>;
-  todoText: string;
+module MyApp {
+  interface TodoScope extends ng.IScope {
+    todoText: string;
+  }
 
-  addTodo: Function;
-  remaining: Function;
-  archive: Function;
+  class GreetingCtrl {
+    constructor($scope: TodoScope) {
+      $scope.todoText = 'こんにちは';
+    }
+  }
+
+  angular.module("myApp", []).controller("GreetingCtrl", ["$scope", GreetingCtrl]);
 }
 
