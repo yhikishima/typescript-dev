@@ -7,3 +7,5 @@
 [Gulp で TypeScript をコンパイル & tsify で連結 – Gulp で作る Web フロントエンド開発環境 #4](http://tech.recruit-mp.co.jp/front-end/gulp-typescript/)
 
 [TypeScript + AngularJSでTodoのサンプルを書いてみた](http://okazuki.hatenablog.com/entry/2014/05/25/011428)
+
+[AngularJSをTypeScriptで書くときのあれこれ](http://qiita.com/zoetro/items/1aefa189cb54169f2cee)

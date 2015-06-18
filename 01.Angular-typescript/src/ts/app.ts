@@ -1,4 +1,4 @@
-/// <reference path="../../typings/tsd.d.ts" />
+
 
 import Greeter = require('./app2');
 
@@ -25,4 +25,7 @@ module MyApp {
 
   angular.module("myApp", []).controller("GreetingCtrl", ["$scope", GreetingCtrl]);
 }
+
+
+
 
