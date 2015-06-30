@@ -8,12 +8,18 @@
   },
   "devDependencies": {
     "browserify": "^10.2.4",
+    "canonical-path": "0.0.2",
+    "dgeni": "^0.4.1",
+    "dgeni-packages": "^0.10.17",
+    "gulp-dgeni": "^0.1.0",
     "gulp-jsmin": "^0.1.5",
+    "gulp-ngdocs": "^0.2.10",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-tsd": "0.0.4",
     "gulp-typescript": "^2.7.6",
     "gulp-watch": "^4.2.4",
+    "lodash": "^3.9.3",
     "tsify": "^0.11.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"

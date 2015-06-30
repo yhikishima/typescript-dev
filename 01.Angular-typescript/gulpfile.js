@@ -8,6 +8,10 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var sourcemaps = require('gulp-sourcemaps');
 
+
+var Dgeni = require('dgeni');
+var lodash = require('lodash');
+
 // tsd task
 gulp.task("tsd", function (callback) {
   tsd({
@@ -34,13 +38,39 @@ gulp.task('tsify', function(){
   browserify()
     .add('src/ts/app.ts')
     .plugin('tsify', {
-      removeComments: true,
+      removeComments: false,
       noImplicitAny: true
     })
     .bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest('dist/js'))
 });
+
+// ngdoc task
+// gulp.task('ngdocs', [], function () {
+//   var options = {
+//     html5Mode: true,
+//     startPage: '/api',
+//     title: "My Angular Docs",
+//     image: "",
+//     imageLink: "",
+//     titleLink: "/api"
+//   }
+// return gulp.src('dist/js/*.js')
+//     .pipe(ngdocs.process(options))
+//     .pipe(gulp.dest('./docs'));
+// });
+
+gulp.task('dgeni', function() {
+  try {
+    var dgeni = new Dgeni([require('./docs/dgeni-example')]);
+    return dgeni.generate();
+  } catch(x) {
+    console.log(x.stack);
+    throw x;
+  }
+});
+
 
 // watch task
 gulp.task('watch', function () {

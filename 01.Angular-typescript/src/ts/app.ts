@@ -8,30 +8,23 @@ class TodoItem {
   done: boolean;
 }
 
-module MyApp {
-  interface TodoScope extends ng.IScope {
-    greetingText: string;
-    todos       : Array<TodoItem>;
-    todoText    : string;
-  }
-
-  class GreetingCtrl {
-    constructor($scope: TodoScope) {
-      $scope.greetingText = 'こんにちは';
-    }
-  }
-
-  class TodoCtrl {
-    constructor($scope: TodoScope) {
-      $scope.todoText = 'tood!';
-      todos = [
-        {text: 'angular', done: true},
-        {text: 'angular2', done: false}
-      ]
-    }
-  }
-
-  angular.module("myApp", []).controller("GreetingCtrl", ["$scope", GreetingCtrl]);
-}
-
+/**
+ * @ngdoc directive
+ * @name rfx.directive:rAutogrow
+ * @element textarea
+ * @function
+ *
+ * @description
+ * Resize textarea automatically to the size of its text content.
+ *
+ * **Note:** ie<9 needs pollyfill for window.getComputedStyle
+ *
+ * @example
+   <example module="rfx">
+     <file name="index.html">
+         <textarea ng-model="text"rx-autogrow class="input-block-level"></textarea>
+         <pre>{{text}}</pre>
+     </file>
+   </example>
+ */
 
